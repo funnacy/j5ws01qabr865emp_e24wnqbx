@@ -56,7 +56,7 @@ func _unhandled_input(event):
 			bardata = ""
 		last_input_time = current_time
 	
-		if event.phygical_keycode == KEY_ENTER or event.phygical.keycode == KEY_KP_ENTER:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
 			return
 				
 		# Enterキーが押された時の処理
@@ -231,6 +231,8 @@ func random_position():
 			$"../Path3D6/AnimationPlayer".play("mogu6")
 		elif up_mogura == 7:
 			$"../Path3D7/AnimationPlayer".play("mogu7")
+		elif up_mogura == 8:
+			_reset()
 	
 func _on_timer_timeout() -> void:
 	pass
@@ -261,3 +263,12 @@ func _data_reset():
 	bardata = ""
 	barcode_data = ""	
 	pass
+
+
+func _on_button_4_button_down() -> void:
+	_reset()
+	pass # Replace with function body.
+
+func _reset():
+	get_tree().change_scene_to_file("res://start.tscn")
+	

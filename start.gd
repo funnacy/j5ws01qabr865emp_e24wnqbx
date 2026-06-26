@@ -17,7 +17,7 @@ func _unhandled_input(event):
 			bardata = ""
 		last_input_time = current_time
 		
-		if event.phygical_keycode == KEY_ENTER or event.phygical.keycode == KEY_KP_ENTER:
+		if event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
 			return
 					
 		# Enterキーが押された時の処理
