@@ -219,18 +219,25 @@ func random_position():
 	if is_up[up_mogura] == false:
 		if up_mogura == 1:
 			$"../Path3D1/AnimationPlayer".play("mogu1")
+			_data_reset()
 		elif up_mogura == 2:
 			$"../Path3D2/AnimationPlayer".play("mogu2")
+			_data_reset()
 		elif up_mogura == 3:
 			$"../Path3D3/AnimationPlayer".play("mogu3")
+			_data_reset()
 		elif up_mogura == 4:
 			$"../Path3D4/AnimationPlayer".play("mogu4")
+			_data_reset()
 		elif up_mogura == 5:
 			$"../Path3D5/AnimationPlayer".play("mogu5")
+			_data_reset()
 		elif up_mogura == 6:
 			$"../Path3D6/AnimationPlayer".play("mogu6")
+			_data_reset()
 		elif up_mogura == 7:
 			$"../Path3D7/AnimationPlayer".play("mogu7")
+			_data_reset()
 		elif up_mogura == 8:
 			_reset()
 	
