@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3scqfhlbxpu2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jxuo5"]
+height = 0.1
+radius = 0.15
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_agdeu"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_010cg"]
+albedo_color = Color(1, 0.0196078, 0.0313726, 1)
+
+[sub_resource type="Animation" id="Animation_agdeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.25, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jxuo5"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.25, 0), Vector3(0, 0.5, 0), Vector3(0, 0.5, 0), Vector3(0, 0.25, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_010cg"]
+_data = {
+&"RESET": SubResource("Animation_agdeu"),
+&"new_animation": SubResource("Animation_jxuo5")
+}
+
+[node name="mogu1" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_jxuo5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("CapsuleMesh_agdeu")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_010cg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape3D")
+libraries = {
+&"": SubResource("AnimationLibrary_010cg")
+}

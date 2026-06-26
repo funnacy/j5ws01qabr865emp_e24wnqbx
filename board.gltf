@@ -1,0 +1,129 @@
+{
+    "asset": {
+        "generator": "glTF Converter for Shade3D",
+        "version": "2.0",
+        "extras": {
+            "license": "All rights reserved"
+        }
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "componentType": 5123,
+            "count": 2829,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 941,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 941,
+            "type": "VEC3",
+            "max": [
+                1.274999976158142,
+                0.05000000074505806,
+                1.25
+            ],
+            "min": [
+                -1.2250001430511475,
+                0.0,
+                -0.7500000596046448
+            ]
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5126,
+            "count": 941,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 4,
+            "componentType": 5126,
+            "count": 941,
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 5660,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5660,
+            "byteLength": 11292,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 16952,
+            "byteLength": 11292,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 28244,
+            "byteLength": 7528,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 35772,
+            "byteLength": 7528,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 43300,
+            "uri": "board.bin"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "metallicFactor": 0.0
+            },
+            "name": "material"
+        }
+    ],
+    "meshes": [
+        {
+            "name": "ポリゴンメッシュ",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 2,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 3,
+                        "TEXCOORD_1": 4
+                    },
+                    "indices": 0,
+                    "material": 0
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0,
+            "name": "ポリゴンメッシュ"
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ],
+            "name": "Scene"
+        }
+    ],
+    "scene": 0
+}

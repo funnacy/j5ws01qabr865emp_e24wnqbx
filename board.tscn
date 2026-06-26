@@ -1,0 +1,573 @@
+[gd_scene load_steps=39 format=3 uid="uid://pgy6a827hc7"]
+
+[ext_resource type="PackedScene" uid="uid://mtgqyowcqxbt" path="res://board.gltf" id="1_p0ybc"]
+[ext_resource type="PackedScene" uid="uid://b3scqfhlbxpu2" path="res://mogu1.tscn" id="2_psm7c"]
+[ext_resource type="Script" uid="uid://i6o4htj2meb0" path="res://hanmer.gd" id="3_8l818"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psm7c"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8l818"]
+sky_material = SubResource("ProceduralSkyMaterial_psm7c")
+
+[sub_resource type="Environment" id="Environment_jqgjh"]
+background_mode = 2
+sky = SubResource("Sky_8l818")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Curve3D" id="Curve3D_8l818"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_mgc1s"]
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_vf5bc"]
+resource_name = "mogu1"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.5)
+}
+
+[sub_resource type="Animation" id="Animation_rq8yp"]
+resource_name = "mogu2"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rq8yp"]
+_data = {
+&"RESET": SubResource("Animation_mgc1s"),
+&"mogu1": SubResource("Animation_vf5bc"),
+&"mogu2": SubResource("Animation_rq8yp")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_jqgjh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_vf5bc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_c4ttu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tngv2"]
+resource_name = "mogu3"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.53333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhrpu"]
+_data = {
+&"RESET": SubResource("Animation_c4ttu"),
+&"mogu3": SubResource("Animation_tngv2")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_nk23n"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_1rang"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5qf1t"]
+resource_name = "mogu4"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o821d"]
+_data = {
+&"RESET": SubResource("Animation_1rang"),
+&"mogu4": SubResource("Animation_5qf1t")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_enpss"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_lxheh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7plpp"]
+resource_name = "mogu5"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.46667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6t13"]
+_data = {
+&"RESET": SubResource("Animation_lxheh"),
+&"mogu5": SubResource("Animation_7plpp")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_y1vqq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_ftc52"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b65qd"]
+resource_name = "mogu6"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lutf5"]
+_data = {
+&"RESET": SubResource("Animation_ftc52"),
+&"mogu6": SubResource("Animation_b65qd")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_8issi"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_cg1r7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mrqbj"]
+resource_name = "mogu7"
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_65toc"]
+_data = {
+&"RESET": SubResource("Animation_cg1r7"),
+&"mogu7": SubResource("Animation_mrqbj")
+}
+
+[sub_resource type="Animation" id="Animation_jqgjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.323081, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8l818"]
+resource_name = "new_animation"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.323081, 0), Vector3(0, -0.7, 0), Vector3(0, -0.35, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vf5bc"]
+_data = {
+&"RESET": SubResource("Animation_jqgjh"),
+&"new_animation": SubResource("Animation_8l818")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jqgjh"]
+height = 0.2
+radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vf5bc"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mgc1s"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Timer3" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jqgjh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="board" parent="." instance=ExtResource("1_p0ybc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0463581, 0, -0.284771)
+
+[node name="Path3D1" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448556, 0, 0.205445)
+curve = SubResource("Curve3D_8l818")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D1"]
+libraries = {
+&"": SubResource("AnimationLibrary_rq8yp")
+}
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D1"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu1" parent="Path3D1/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 4.23656e-23, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -0.0114026, -0.0117163, 0.335895)
+collision_layer = 2
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0547857, 0, 0.212294)
+curve = SubResource("Curve3D_jqgjh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_rq8yp")
+}
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu2" parent="Path3D2/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0, 0, 0.35)
+collision_layer = 4
+
+[node name="Path3D3" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599076, 0, 0.204874)
+curve = SubResource("Curve3D_vf5bc")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu3" parent="Path3D3/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0, 0, 0.336)
+collision_layer = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D3"]
+libraries = {
+&"": SubResource("AnimationLibrary_xhrpu")
+}
+
+[node name="Path3D4" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.653, 0, -0.34)
+curve = SubResource("Curve3D_nk23n")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu4" parent="Path3D4/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0, 0, 0.35)
+collision_layer = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D4"]
+libraries = {
+&"": SubResource("AnimationLibrary_o821d")
+}
+
+[node name="Path3D5" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148815, 0, -0.339556)
+curve = SubResource("Curve3D_enpss")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu5" parent="Path3D5/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0, 0, 0.35)
+collision_layer = 32
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D5"]
+libraries = {
+&"": SubResource("AnimationLibrary_r6t13")
+}
+
+[node name="Path3D6" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354526, 0, -0.342981)
+curve = SubResource("Curve3D_y1vqq")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu6" parent="Path3D6/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -0.00298056, 0.00147372, 0.35)
+collision_layer = 64
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D6"]
+libraries = {
+&"": SubResource("AnimationLibrary_lutf5")
+}
+
+[node name="Path3D7" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0463581, 0, -0.284771)
+curve = SubResource("Curve3D_8issi")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D7"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+
+[node name="mogu7" parent="Path3D7/PathFollow3D" instance=ExtResource("2_psm7c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0.055229, 0.800642, 0.35)
+collision_layer = 128
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D7"]
+libraries = {
+&"": SubResource("AnimationLibrary_65toc")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160738, 0.318179, 2.08622)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 650.0
+offset_right = 233.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 50
+text = "すすむ
+"
+
+[node name="hanmer" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.7)
+collision_mask = 254
+script = ExtResource("3_8l818")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hanmer"]
+libraries = {
+&"": SubResource("AnimationLibrary_vf5bc")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hanmer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.323081, 0)
+shape = SubResource("CylinderShape3D_jqgjh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hanmer/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("CylinderMesh_vf5bc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hanmer/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.3, 0.221099)
+mesh = SubResource("CylinderMesh_mgc1s")
+
+[node name="Label3D" type="Label3D" parent="hanmer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396576, 0)
+pixel_size = 0.01
+text = "0"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 257.0
+offset_top = 650.0
+offset_right = 457.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 50
+text = "もどる"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 582.0
+offset_top = 650.0
+offset_right = 782.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 50
+text = "こうげき"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.804016, 0.289028, 0.216628)
+
+[node name="Label2" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, -0.5, 0.9)
+size = Vector3(2.5, 1, 0.1)
+
+[connection signal="timeout" from="Timer3" to="hanmer" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer2" to="hanmer" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer" to="hanmer" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Path3D1/PathFollow3D/mogu1" to="hanmer" method="_on_mogu_1_body_entered"]
+[connection signal="body_entered" from="Path3D2/PathFollow3D/mogu2" to="hanmer" method="_on_mogu_3_body_entered"]
+[connection signal="body_entered" from="Path3D3/PathFollow3D/mogu3" to="hanmer" method="_on_mogu_4_body_entered"]
+[connection signal="body_entered" from="Path3D4/PathFollow3D/mogu4" to="hanmer" method="_on_mogu_5_body_entered"]
+[connection signal="body_entered" from="Path3D5/PathFollow3D/mogu5" to="hanmer" method="_on_mogu_5_body_entered"]
+[connection signal="body_entered" from="Path3D6/PathFollow3D/mogu6" to="hanmer" method="_on_mogu_6_body_entered"]
+[connection signal="body_entered" from="Path3D7/PathFollow3D/mogu7" to="hanmer" method="_on_mogu_7_body_entered"]
+[connection signal="button_down" from="Button" to="hanmer" method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="hanmer" method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button3" to="hanmer" method="_on_button_3_button_down"]
