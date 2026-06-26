@@ -41,7 +41,7 @@ func _unhandled_input(event):
 		else:
 			pass		
 						
-		print(barcode_data)
+		#print(barcode_data)
 				
 		if barcode_data == str(barcode):
 			_on_button_button_down()

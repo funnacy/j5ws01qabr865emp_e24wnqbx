@@ -46,6 +46,7 @@ func _ready() -> void:
 	Timerset.start()
 	Timertotal.start()
 	lesttimer.text =str(timer)
+	Engine.max_fps = 60
 
 func _unhandled_input(event):
 	
@@ -81,7 +82,7 @@ func _unhandled_input(event):
 			pass		
 	else:
 		pass					
-		print(barcode_data)
+		#print(barcode_data)
 
 	if barcode_data == str(barcode1):	
 		hanmer.global_position = point[1]
@@ -214,7 +215,7 @@ func _on_mogu_7_body_entered(body: Node3D) -> void:
 func random_position():
 	var up_mogura = randi_range(1,7)
 	
-	print(up_mogura)
+	#print(up_mogura)
 	
 	if is_up[up_mogura] == false:
 		if up_mogura == 1:

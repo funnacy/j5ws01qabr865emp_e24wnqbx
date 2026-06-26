@@ -44,7 +44,7 @@ func _unhandled_input(event):
 					pass
 		else:
 			pass		
-		print(barcode_data)
+		#print(barcode_data)
 
 	if barcode_data == str(barcode8):	
 		_reset()
