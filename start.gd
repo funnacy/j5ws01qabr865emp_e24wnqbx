@@ -8,6 +8,9 @@ var barcount = 0
 var last_input_time:int = 0
 var TIMEOUT: int = 50
 
+func _ready():
+	Global.hitpoint = 0
+	
 func _unhandled_input(event):
 	
 	if event is InputEventKey and event.pressed:
