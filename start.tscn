@@ -14,15 +14,15 @@ script = ExtResource("1_ots34")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1250.0
-offset_bottom = 750.0
+offset_right = 1100.0
+offset_bottom = 600.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 1100.0
-offset_bottom = 350.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 1050.0
+offset_bottom = 300.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qn1rc")
 theme_override_font_sizes/font_size = 100
@@ -32,12 +32,12 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 500.0
-offset_right = 1228.0
-offset_bottom = 653.0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 1000.0
+offset_bottom = 553.0
 theme_override_fonts/font = ExtResource("2_qn1rc")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 text = "スタートコードを読み取る"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

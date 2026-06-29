@@ -359,7 +359,6 @@ environment = SubResource("Environment_jqgjh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="board" parent="." instance=ExtResource("1_p0ybc")]
@@ -478,20 +477,20 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160738, 0.318179, 2.08622)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 1)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 23.0
-offset_top = 581.0
+offset_top = 450.0
 offset_right = 223.0
-offset_bottom = 681.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("3_jqgjh")
 theme_override_font_sizes/font_size = 50
 text = "すすむ
 "
 
 [node name="hanmer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 collision_mask = 254
 script = ExtResource("3_8l818")
 
@@ -519,42 +518,50 @@ text = "0"
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 247.0
-offset_top = 579.0
+offset_top = 450.0
 offset_right = 447.0
-offset_bottom = 679.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("3_jqgjh")
 theme_override_font_sizes/font_size = 50
 text = "もどる"
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 477.0
-offset_top = 579.0
-offset_right = 677.0
-offset_bottom = 679.0
+offset_top = 450.0
+offset_right = 685.0
+offset_bottom = 550.0
 theme_override_fonts/font = ExtResource("3_jqgjh")
 theme_override_font_sizes/font_size = 50
 text = "こうげき"
+
+[node name="Label3" type="Label" parent="."]
+offset_right = 500.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jqgjh")
+theme_override_font_sizes/font_size = 40
+text = "のこりじかん"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -300.0
-offset_bottom = 150.0
+offset_left = -700.0
+offset_top = 30.0
+offset_right = -400.0
+offset_bottom = 180.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.804016, 0.289028, 0.216628)
-
 [node name="Label2" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 180.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 80
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -568,13 +575,22 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -100.0
+offset_left = -250.0
+offset_top = -600.0
+offset_bottom = -500.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_jqgjh")
 theme_override_font_sizes/font_size = 30
 text = "リセット"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 300.0
+offset_right = 800.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_jqgjh")
+theme_override_font_sizes/font_size = 40
+text = "もぐらを たいじ したかず"
 
 [connection signal="timeout" from="Timer3" to="hanmer" method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer2" to="hanmer" method="_on_timer_2_timeout"]

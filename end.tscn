@@ -14,15 +14,15 @@ script = ExtResource("1_n735c")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1250.0
-offset_bottom = 700.0
+offset_right = 1100.0
+offset_bottom = 600.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 200.0
-offset_right = 1100.0
-offset_bottom = 400.0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 1050.0
+offset_bottom = 300.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_egc6y")
 theme_override_font_sizes/font_size = 100
@@ -32,10 +32,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 450.0
-offset_right = 950.0
-offset_bottom = 668.0
+offset_left = 350.0
+offset_top = 300.0
+offset_right = 850.0
+offset_bottom = 518.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_egc6y")
 theme_override_font_sizes/font_size = 150
@@ -45,8 +45,8 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1050.0
-offset_right = 1250.0
+offset_left = 850.0
+offset_right = 1100.0
 offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("2_egc6y")
 theme_override_font_sizes/font_size = 50

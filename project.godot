@@ -21,8 +21,8 @@ Global="*res://Global.gd"
 
 [display]
 
-window/size/viewport_width=1250
-window/size/viewport_height=700
+window/size/viewport_width=1100
+window/size/viewport_height=600
 window/size/resizable=false
 window/subwindows/embed_subwindows=false
 window/frame_pacing/android/enable_frame_pacing=false
